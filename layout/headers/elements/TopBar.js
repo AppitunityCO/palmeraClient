@@ -4,6 +4,8 @@ import { Logo2 } from "../../../components/elements/Logo";
 import SearchSuggestionBox from "../../../components/elements/SearchSuggestionBox";
 import useOutsideDropdown from "../../../utils/useOutsideDropdown";
 import RightNav from "./RightNav";
+import { Logo5 } from "../../../components/elements/Logo";
+
 // import Cart from './rightNavComponents/Cart';
 
 const TopBar = ({ logo }) => {
@@ -19,7 +21,7 @@ const TopBar = ({ logo }) => {
         <Row>
           <Col>
             <div className="top-content top-nav">
-              {logo || <Logo2 />}
+              {<Logo5 /> || <Logo2 />}
               <ul className="top-bar-right right-menu">
                 <li className="cart">
                   <InputGroup className="header-right ">

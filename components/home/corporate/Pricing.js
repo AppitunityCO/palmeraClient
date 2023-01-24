@@ -9,7 +9,37 @@ import { LatestPropertyDetail, pricingPlan } from "../../../constValues/constVal
 import { pricingSlider } from "../../../data/slickSlider";
 import NoSsr from "../../../utils/NoSsr";
 
-const PricingSection = ({ value }) => {
+const PricingSection = () => {
+  const value= [
+    {
+      img: "/assets/svg/icons.svg#home-heart",
+      title: "Personal",
+      details: "Residential design is the design of the interior of private residences.",
+      moreDetails: ["Entertaining spaces with kitchen opening.", "Elegant retreat in a quiet setting.", "Apartment An individual multi-unit building."],
+      price: "120.00",
+    },
+    {
+      img: "/assets/svg/icons.svg#home-lock",
+      title: "Professional",
+      details: "Elegant retreat in a quiet Coral Gables setting. This home provides opening.",
+      moreDetails: ["house is a single-unit residential building.", "This House provides opening.", "Location of resources will draw attention."],
+      price: "310.00",
+    },
+    {
+      img: "/assets/svg/icons.svg#homes",
+      title: "Business",
+      details: "Apartment An individual multi-unit building. Elegant Coral Gables setting.",
+      moreDetails: ["Development team work together in many ways.", "Apartment individual multi-unit building.", "great name for ranch surrounded by valleys."],
+      price: "430.00",
+    },
+    {
+      img: "/assets/svg/icons.svg#home-lock",
+      title: "Professional",
+      details: "Entertaining spaces with kitchen opening. This home provides opening.",
+      moreDetails: ["house is a single-unit residential building.", "This House provides opening.", "Location of resources will draw attention."],
+      price: "310.00",
+    },
+  ]
   return (
     <section className="pricing-section slick-between slick-shadow">
       <Container>

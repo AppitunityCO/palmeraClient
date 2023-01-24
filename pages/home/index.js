@@ -5,7 +5,6 @@
  */
 import React, { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Logo5 } from "../../components/elements/Logo";
 import NavbarTwo from "../../layout/headers/NavbarTwo";
 
 export const getStaticProps = async ({ locale }) => ({ props: { ...(await serverSideTranslations(locale, ["common"])) } });
@@ -22,7 +21,7 @@ const ParallaxImage = () => {
   }, []);
   return (
     <>
-      <NavbarTwo logo={<Logo5 />} />
+      <NavbarTwo  />
       <BodyContent />
       <FooterTwo />
     </>

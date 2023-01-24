@@ -8,6 +8,7 @@ import { getData } from "../../../utils/getData";
 import AboutSection from "../corporate/About";
 import BannerSection from "../corporate/Banner";
 import BlogSection from "../corporate/Blog";
+import Video from "../modern/HomeBanner";
 import FeaturePropertySection from "../corporate/FeatureProperty";
 import PricingSection from "../corporate/Pricing";
 import PropertySection from "../corporate/Property";
@@ -34,18 +35,19 @@ const BodyContent = () => {
   return (
     <>
       <HomeBannerSection />
-      <div className="section-pb">
-        <PropertySection value={value?.PropertyListing} />
-      </div>
-      <FeaturePropertySection value={value?.FeaturedPropertyInCorporateLayout} />
+
+      <FeaturePropertySection />
+
+      <Video />
+      <PricingSection value={AppPropertyData.PricingPlan} />
+
+      {/*    <BannerSection banner={7} />
+     
+      <AboutSection value={clientData?.OurAgentInCorporateLayout} />
       <div className="service-section-pt-0">
         <ServiceSection value={AppPropertyData.ProvidedServices} />
       </div>
-      <PropertySection value={value?.PropertyListing} size={3} />
-      <PricingSection value={AppPropertyData.PricingPlan} />
-      <BannerSection banner={7} />
-      <AboutSection value={clientData?.OurAgentInCorporateLayout} />
-      <TestimonialSection value={clientData?.OurClientInCorporateLayout} />
+      <TestimonialSection value={clientData?.OurClientInCorporateLayout} /> */}
       <BlogSection value={value?.LatestBlogInCorporate} />
     </>
   );

@@ -20,7 +20,7 @@ const HomeBannerSection = () => {
                   <span className="block"></span>
                   <h1>
                     Luxury
-                    <br /> Apartment
+                    <br /> Products
                   </h1>
                 </div>
                 <div className="role">
@@ -106,7 +106,7 @@ const HomeBannerSection = () => {
           </Col>
           <Col lg="5">
             <div className="parallax-right">
-              <img src="/assets/images/layout/playing.svg" alt="" className="img-fluid" />
+              <img src="/assets/images/layout/1.jpg" alt="" className="img-fluid" />
             </div>
           </Col>
         </Row>

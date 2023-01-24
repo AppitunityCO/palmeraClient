@@ -8,11 +8,11 @@ import useStickyBar from "../../utils/useStickyBar";
 import MainNav from "./elements/MainNav";
 import TopBar from "./elements/TopBar";
 
-const NavbarTwo = ({ logo }) => {
+const NavbarTwo = () => {
   const fix = useStickyBar();
   return (
     <>
-      <TopBar logo={logo} />
+      <TopBar />
       <header className={`header-3 fixed-header ${fix ? "fixed" : ""}`}>
         <Container>
           <Row>
