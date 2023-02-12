@@ -1,117 +1,102 @@
 import Link from "next/link";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { MapPin } from "react-feather";
+import Slider from "react-slick";
+
 import { useDispatch } from "react-redux";
-import { Button, Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from "reactstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Row,
+} from "reactstrap";
+import Img from "../../../utils/BackgroundImageRatio";
 
 const HomeBannerSection = () => {
-  const [toggle, setToggle] = useState(false);
-  const [dropDownInput, setDropDownInput] = useState("Apartment");
-  const dispatch = useDispatch();
+  const settings = {
+    dots: false,
+    arrow: true,
+    arrow: true,
+    speed: 1200,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+  };
+  const [y, setY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setY(window.pageYOffset);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <section className="parallax-home video-layout">
-      <Container>
-        <Row>
-          <Col lg="7" md="9">
-            <div className="parallax-content">
-              <div className="box text-affect">
-                <div className="title">
-                  <span className="block"></span>
-                  <h1>
-                    Luxury
-                    <br /> Products
-                  </h1>
-                </div>
-                <div className="role">
-                  <div className="block"></div>
-                  <p className="font-roboto">Limited time offer.Hurry up !!</p>
-                </div>
+    <div className="arrow-style-2 ">
+      <Slider {...settings} arrows={true}>
+        <section className="p-0 parallax-section">
+          <div
+            className="full_banner"
+            style={{ backgroundPositionY: `${y / 2}px` }}
+          >
+            <Img
+              src="/assets/images/layout/1.jpg"
+              className="img-fluid bg-img"
+              alt
+            />
+            <div className="center-content">
+              <div>
+                <h2>Luxury products</h2>
+                <h6 className="text-center">find our best products</h6>
               </div>
-              <form className="video-search">
-                <div className="input-group">
-                  <span className="input-group-text" id="basic-addon1">
-                    <MapPin />
-                  </span>
-                  <input type="text" className="form-control" placeholder="Search location" aria-describedby="basic-addon1" />
-                </div>
-                <Dropdown isOpen={toggle} toggle={() => setToggle(!toggle)}>
-                  <DropdownToggle>
-                    <Fragment className="dropdown-toggle font-roboto">
-                      {dropDownInput}
-                      <i className="fas fa-angle-down"></i>
-                    </Fragment>
-                  </DropdownToggle>
-                  <DropdownMenu className=" text-start">
-                    <DropdownItem>
-                      <Fragment
-                        className="dropdown-item"
-                        onClick={() => {
-                          setDropDownInput("Any property type");
-                          dispatch({ type: "propertyType", payload: "Property Type" });
-                        }}>
-                        Any property type
-                      </Fragment>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Fragment
-                        className="dropdown-item"
-                        onClick={() => {
-                          setDropDownInput("Office");
-                          dispatch({ type: "propertyType", payload: "Offices" });
-                        }}>
-                        Office
-                      </Fragment>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Fragment
-                        className="dropdown-item"
-                        onClick={() => {
-                          setDropDownInput("Apartment");
-                          dispatch({ type: "propertyType", payload: "Apartment" });
-                        }}>
-                        Apartment
-                      </Fragment>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Fragment
-                        className="dropdown-item"
-                        onClick={() => {
-                          setDropDownInput("House");
-                          dispatch({ type: "propertyType", payload: "Town House" });
-                        }}>
-                        House
-                      </Fragment>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Fragment
-                        className="dropdown-item"
-                        onClick={() => {
-                          setDropDownInput("Villa");
-                          dispatch({ type: "propertyType", payload: "Villa" });
-                        }}>
-                        Villa
-                      </Fragment>
-                    </DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-
-                <div>
-                  <Link href="/listing/list-view/listing/left-sidebar" className="btn btn-solid btn-flat">
-                    Search
-                  </Link>
-                </div>
-              </form>
             </div>
-          </Col>
-          <Col lg="5">
-            <div className="parallax-right">
-              <img src="/assets/images/layout/1.jpg" alt="" className="img-fluid" />
+          </div>
+        </section>
+        <section className="p-0 parallax-section">
+          <div
+            className="full_banner"
+            style={{ backgroundPositionY: `${y / 2}px` }}
+          >
+            <Img
+              src="/assets/images/layout/quartz.jpg"
+              className="img-fluid bg-img"
+              alt
+            />
+            <div className="center-content">
+              <div>
+                <h2>With Even Better Service</h2>
+                <h6 className="text-center">find our provided services</h6>
+              </div>
             </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+          </div>
+        </section>
+        <section className="p-0 parallax-section">
+          <div
+            className="full_banner"
+            style={{ backgroundPositionY: `${y / 2}px` }}
+          >
+            <Img
+              src="/assets/images/layout/marble.jpg"
+              className="img-fluid bg-img"
+              alt
+            />
+            <div className="center-content">
+              <div>
+                <h2>Check Our Applications</h2>
+                <h6 className="text-center">check out our best applications</h6>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Slider>
+    </div>
   );
 };
 

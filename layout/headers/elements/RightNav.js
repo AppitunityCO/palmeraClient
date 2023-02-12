@@ -19,11 +19,10 @@ const RightNav = () => {
           {RightNavMenuItem.map((value, i) => (
             <Fragment key={i}>
               {value.title === "language" && <Language value={value} />}
-              {value.title === "cart" && <Cart />}
-              {value.title === "currency" && <Currency value={value} />}
+
               {value.title === "user" && (
                 <li className="dropdown">
-                  <Link href="/pages/other-pages/login">
+                  <Link href="/login">
                     <User />
                   </Link>
                 </li>

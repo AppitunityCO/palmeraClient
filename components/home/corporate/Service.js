@@ -8,9 +8,26 @@ import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import { LatestPropertyDetail, providerServices } from "../../../constValues/constValues";
 
-const ServiceSection = ({ value }) => {
+const ServiceSection = () => {
+  const value =  [
+    {
+      img: "/assets/svg/icons.svg#home-heart",
+      title: "Insurance",
+      details: "Elegant retreat in a quiet Coral Gables setting. This home provides wonderful entertaining spaces with a chef kitchen opening.",
+    },
+    {
+      img: "/assets/svg/icons.svg#customer-service",
+      title: "Fastest Service",
+      details: " provides wonderful entertaining spaces with a chef kitchen opening.Elegant retreat in a quiet Coral Gables setting.",
+    },
+    {
+      img: "/assets/svg/icons.svg#shield",
+      title: "Largest Marble Company",
+      details: "A great name for a ranch surrounded by valley.This home provides wonderful entertaining space with kitchen opening.",
+    },
+  ]
   return (
-    <section className="service-section service-2 pb-0">
+    <section className="service-section service-2 pb-0 my-5">
       <Container>
         <Row>
           <Col>
@@ -40,9 +57,7 @@ const ServiceSection = ({ value }) => {
                         <h3>{data.title}</h3>
                       </Link>
                       <p className="font-roboto">{data.details}</p>
-                      <Link href="/pages/other-pages/services" className="btn btn-light-bg btn-flat">
-                        <span>view more</span>
-                      </Link>
+                  
                     </div>
                   </Col>
                 ))}

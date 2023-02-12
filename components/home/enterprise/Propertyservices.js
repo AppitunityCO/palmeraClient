@@ -15,8 +15,10 @@ const PropertyServicesSection = ({ value }) => {
         <Row>
           <Col>
             <div className="title-2">
-              <h2>{PropertyServices}</h2>
-              <p>{Discover}</p>
+              <h2>Our Applications</h2>
+              <p>
+                Discover our best applications
+              </p>
             </div>
             <Row className=" property-service column-space">
               {value?.map((data, i) => (
@@ -24,7 +26,9 @@ const PropertyServicesSection = ({ value }) => {
                   <div className="service-box">
                     <div className="icon-round">{data.img}</div>
                     <h3>
-                      <Link href="/pages/other-pages/services">{data.title}</Link>
+                      <Link href="/pages/other-pages/services">
+                        {data.title}
+                      </Link>
                     </h3>
                     <p>{data.details}</p>
                   </div>

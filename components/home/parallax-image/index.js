@@ -39,16 +39,19 @@ const BodyContent = () => {
       <FeaturePropertySection />
 
       <Video />
-      <PricingSection value={AppPropertyData.PricingPlan} />
-
-      {/*    <BannerSection banner={7} />
-     
-      <AboutSection value={clientData?.OurAgentInCorporateLayout} />
-      <div className="service-section-pt-0">
+{/*       <PricingSection value={AppPropertyData.PricingPlan} />
+ */}
+    <div className="service-section-pt-0">
         <ServiceSection value={AppPropertyData.ProvidedServices} />
       </div>
-      <TestimonialSection value={clientData?.OurClientInCorporateLayout} /> */}
-      <BlogSection value={value?.LatestBlogInCorporate} />
+      
+         <BannerSection banner={7} />
+     
+      <AboutSection value={clientData?.OurAgentInCorporateLayout} />
+   
+{/*       <TestimonialSection value={clientData?.OurClientInCorporateLayout} />
+ */}    
+   <BlogSection value={value?.LatestBlogInCorporate} />
     </>
   );
 };

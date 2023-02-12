@@ -46,8 +46,8 @@ const Logo5 = () => {
   return (
     <div className="brand-logo">
       <Link href="/">
-        <img src="/assets/images/LogoPalmera.png" width={70} alt="" className="img-fluid for-light" />
-        <img src="/assets/images/LogoPalmera.png" width={70} alt="" className="img-fluid for-dark" />
+        <img src="/assets/images/LogoPalmera.png" width={100} alt="" className="img-fluid for-light" />
+        <img src="/assets/images/LogoPalmera.png" width={100} alt="" className="img-fluid for-dark" />
       </Link>
     </div>
   );

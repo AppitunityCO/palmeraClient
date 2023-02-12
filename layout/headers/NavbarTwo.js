@@ -21,7 +21,15 @@ const NavbarTwo = () => {
                 <MainNav icon={true} />
                 <div className="contact-number">
                   <i className="fas fa-phone-alt"></i>
-                  <span className="font-roboto">(880)-123 789 / (800)- 561 456</span>
+                  <span className="font-roboto">
+                    <a href="tel:0034 622 220 4101" className="text-white">
+                      (0034)-622 220 4101
+                    </a>
+                    /
+                    <a href="tel:0034613371574" className="text-white">
+                      (0034)-613 371 574
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>

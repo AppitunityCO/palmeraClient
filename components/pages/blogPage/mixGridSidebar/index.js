@@ -22,14 +22,71 @@ import { gridReducer, initialGrid } from "../../../listing/gridView/grid/gridRed
 const BodyContent = ({ side }) => {
   const [value, setValue] = useState();
   const [grid, gridDispatch] = useReducer(gridReducer, initialGrid);
-  useEffect(() => {
-    getData(`${process.env.API_URL}/property`)
-      .then((res) => {
-        setValue(res.data.LatestBlogInCorporate);
-        gridDispatch({ type: "totalPages", payload: Math.ceil(res.data.LatestBlogInCorporate.length / 4) });
-      })
-      .catch((error) => console.log("Error", error));
-  }, []);
+  const LatestBlogInCorporate = [
+    {
+      img: "/assets/images/property/16.jpg",
+      title: "Signs That You Should Sell Your Home Soon",
+      place: " Phonics ,Newyork",
+      detail: "Luxury real estate is sometimes use as store value, especially wealthy foreigners, without any particular attempt to rent. Some luxury units in London and New York City.",
+      date: 18,
+      month: "July",
+      id: "30",
+    },
+    {
+      img: "/assets/images/blog/2.jpg",
+      title: "Twice profit than before you ever got in business.",
+      place: " Cambridge,England",
+      detail: "Residences can be classified by and how they are connected to neighbouring residences and land. Different types of housing tenure can be used for the same physical type.",
+      date: 19,
+      month: "june",
+      id: "31",
+    },
+    {
+      img: "/assets/images/blog/3.jpg",
+      title: "What Are Credit Scores And Why Are They Important?",
+      place: " Barcelona,London",
+      detail: "The most common and most absolute type of real estate property, the tenant enjoys the greatest discretion over the disposal of the estate property.",
+      date: 18,
+      month: "May",
+      id: "32",
+    },
+    {
+      img: "/assets/images/property/18.jpg",
+      title: "Things To Look Out For When Viewing A Property.",
+      place: "Berlin,Germany",
+      detail: "An interior designer is someone who plans,researches,construction sites, coordinates,management and manages such enhancement projects.",
+      date: 26,
+      month: "Feb",
+      id: "33",
+    },
+    {
+      img: "/assets/images/blog/2.jpg",
+      title: "Things To Look Out For When Viewing A Property.",
+      place: "Berlin,Germany",
+      detail: "An interior designer is someone who plans,researches,construction sites, coordinates,management and manages such enhancement projects.",
+      date: 26,
+      month: "Feb",
+      id: "33",
+    },
+    {
+      img: "/assets/images/blog/1.jpg",
+      title: "Signs That You Should Sell Your Home Soon",
+      place: " Phonics ,Newyork",
+      detail: "Luxury real estate is sometimes use as store value, especially wealthy foreigners, without any particular attempt to rent. Some luxury units in London and New York City.",
+      date: 18,
+      month: "July",
+      id: "34",
+    },
+    {
+      img: "/assets/images/blog/3.jpg",
+      title: "What Are Credit Scores And Why Are They Important?",
+      place: " Barcelona,London",
+      detail: "The most common and most absolute type of real estate property, the tenant enjoys the greatest discretion over the disposal of the estate property.",
+      date: 18,
+      month: "May",
+      id: "35",
+    },
+  ]
   return (
     <section className="ratio_landscape blog-list-section">
       <Container>
@@ -42,38 +99,11 @@ const BodyContent = ({ side }) => {
               <PopularTags />
             </Sidebar>
           )}
-          <Col xl="9" lg="8">
-            <Row className="blog-grid  mb-0">
-              <Col md="12">
-                <div className="blog-wrap wow fadeInUp">
-                  <div className="blog-image">
-                    <div>
-                      <Img src="/assets/images/blog/1.jpg" className="bg-img img-fluid" alt="" />
-                    </div>
-                    <div className="blog-label">
-                      <div>
-                        <h3>05</h3>
-                        <span>nov</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="blog-details">
-                    <span>
-                      <MapPin /> Phonics ,Newyork
-                    </span>
-                    <h3>
-                      <Link href="/pages/blog-detail-pages/left-sidebar">Twice profit than before you ever got in business.</Link>
-                    </h3>
-                    <p className="font-roboto">Sometimes complemented by advice and practical assistance. Decoration is the furnishing of a space with decorative elements, sometimes complemented by advice and practical assistance.</p>
-                    <Link href="/pages/blog-detail-pages/left-sidebar">read more</Link>
-                  </div>
-                </div>
-              </Col>
-            </Row>
+          <Col xl="12" lg="12">
             <Col>
               <Row className="blog-grid ">
-                {value &&
-                  value.slice(grid.toPage * 4 - 4, grid.toPage * 4).map((data, i) => (
+                {LatestBlogInCorporate &&
+                  LatestBlogInCorporate.slice(grid.toPage * 4 - 4, grid.toPage * 6).map((data, i) => (
                     <Col md="6" lg={side === "right" || side === "left" ? "6" : "4"} key={i}>
                       <BlogWrapBox data={data} />
                     </Col>

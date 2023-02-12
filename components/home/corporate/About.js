@@ -12,9 +12,35 @@ import { about2 } from "../../../data/slickSlider";
 import NoSsr from "../../../utils/NoSsr";
 import SocialAccounts from "../../elements/SocialAccounts";
 
-const AboutSection = ({ value }) => {
+const AboutSection = () => {
+  const value = [
+    {
+      name: "Material Rock",
+      img: "/assets/images/avatar/metaverse.png",
+      work: "UAE",
+      email: "John@inspirythemes.com",
+      details:
+        "How they are connected to neighbouring residences and land. Residences can be classified.",
+    },
+    {
+      name: "Meta Company",
+      img: "/assets/images/avatar/materialRock.jpg",
+      work: "Saudi Arabia",
+      email: "John@inspirythemes.com",
+      details:
+        "How they are connected to neighbouring residences and land. Residences can be classified.",
+    },
+    {
+      name: "Musica Company",
+      img: "/assets/images/avatar/musica.png",
+      work: "Saudi Arabia",
+      email: "John@inspirythemes.com",
+      details:
+        "How they are connected to neighbouring residences and land. Residences can be classified.",
+    },
+  ];
   return (
-    <section className="about-section slick-between pb-0 ratio_square">
+    <section className="about-section slick-between pb-0 ratio_square mb-4">
       <Container>
         <Row>
           <Col>
@@ -23,9 +49,8 @@ const AboutSection = ({ value }) => {
                 <use xlinkHref="/assets/svg/icons.svg#title-line"></use>
               </svg>
               <h2>
-                Our <span>Agent</span>
+                Our <span>Customers & partners</span>
               </h2>
-              <p className="font-roboto">{LatestPropertyDetail}</p>
             </div>
             <NoSsr>
               <Slider className="about-wrap about-2" {...about2}>
@@ -35,7 +60,13 @@ const AboutSection = ({ value }) => {
                       <div className="about-content">
                         <div className="about-image">
                           <div>
-                            <img src={data.img} className="img-fluid bg-img" alt="" />
+                            <img
+                              src={data.img}
+                              className=""
+                              alt=""
+                              height={250}
+                              width={350}
+                            />
                           </div>
                           <div className="about-overlay"></div>
                           <div className="overlay-content">
@@ -58,10 +89,13 @@ const AboutSection = ({ value }) => {
                             {data.email}
                           </span>
                           <p className="font-roboto">{data.details}</p>
-                          <Link href="/agent/agent-profile" className="btn btn-solid btn-flat mt-2">
+                        {/*   <Link
+                            href="/agent/agent-profile"
+                            className="btn btn-solid btn-flat mt-2"
+                          >
                             <Eye />
                             View Portfolio
-                          </Link>
+                          </Link> */}
                         </div>
                       </div>
                     </div>

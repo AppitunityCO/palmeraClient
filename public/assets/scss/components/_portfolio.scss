@@ -141,11 +141,13 @@
     .full_banner {
         height: 93vh;
         background-attachment: fixed;
-        background-color: rgba($black,0.5);
+        background-color: rgba($black,0.1);
         background-blend-mode: overlay;
+        position: relative;
+        z-index:100 !important;
         display: flex !important;
-        align-items: flex-end;
-        justify-content: flex-end;
+        align-items: center;
+        justify-content: center;
         padding: 20px;
         .center-content {
             text-align: right;

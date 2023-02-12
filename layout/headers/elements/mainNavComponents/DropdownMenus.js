@@ -20,22 +20,24 @@ const DropdownMenus = ({ navTitle, isOpen, setIsOpen, isOpenChild, setIsOpenChil
       <a
         className={`nav-link menu-title ${isOpen === navTitle.title ? "active" : ""}`}
         onClick={(e) => {
-          e.preventDefault();
+         mobileSize && e.preventDefault();
           setIsOpen(navTitle.title);
           isOpen === navTitle.title && setIsOpen();
-        }}>
+        }}
+        href={navTitle.navLink}
+        >
         {!mobileSize && icon && navTitle.icon}
         {t(navTitle.title)}
         <span className="according-menu">{isOpen === navTitle.title ? "-" : "+"}</span>
       </a>
       <ul className={`nav-submenu menu-content ${mobileSize && isOpen === navTitle.title ? "d-block" : "d-none d-xl-block"}`}>
-        {navTitle.children.map((navList, index) => (
+        {navTitle.children?.map((navList, index) => (
           <li key={index}>
             {navList.type === "link" ? (
               <>
                 {navList.path !== router.pathname ? (
-                  <Link href={navList.path}>
-                    {navList.title}
+                  <Link href={navList.path} style={{borderBottom:"1px solid #00968a", borderRadius:"1px" , padding:"5px 10px"}}>
+                    {navList.title.toUpperCase()}
                     {navList.tag && <span className="label">{navList.tag}</span>}
                     {navList.icon && (
                       <span className="icon-trend label">

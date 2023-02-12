@@ -100,3 +100,49 @@ Author URI: https://themeforest.net/user/pixelstrap
 
 // font-awesome
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+.arrow-style-2 {
+  .slick-arrow {
+    height: 82px;
+    width: 42px;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    box-shadow: none;
+    background: transparent;
+    @media (max-width: 576px) {
+      height: 42px;
+    }
+
+    &::before {
+      color: #fff;
+	  font-weight: 700;
+    }
+    &:hover {
+      background: #fff;
+      &::before {
+        color: #333;
+      }
+    }
+
+    &.slick-next {
+      right: 25px;
+      @media (max-width: 576px) {
+        right: 10px;
+      }
+      &::before {
+        content: ">";
+        font-size: 30px;
+      }
+    }
+    &.slick-prev {
+      left: 25px;
+      @media (max-width: 576px) {
+        left: 10px;
+      }
+      &::before {
+        content: "<";
+        font-size: 30px;
+      }
+    }
+  }
+}

@@ -27,6 +27,8 @@ const BodyContent = ({ side }) => {
         gridDispatch({ type: "totalPages", payload: Math.ceil(res.data.LatestBlogInCorporate.length / 6) });
       })
       .catch((error) => console.log("Error", error));
+
+      
   }, []);
   return (
     <section className="ratio2_1">

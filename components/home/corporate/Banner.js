@@ -15,17 +15,15 @@ const BannerSection = ({ banner }) => {
         <Row>
           <Col>
             <div className="banner-3">
-              <span className={`label label-light label-flat`}># {Realestate}</span>
+              <span className={`label label-light label-flat`}>#Palmera</span>
               <h2>
-                Are you worried <br /> sick about moving out?
+              Welcome To Palmera marble
               </h2>
               <p>
-                We know how it feels! Elegant retreat in a quiet Coral Gables setting. This home provides wonderful entertaining spaces with a chef kitchen opening Elegant retreat in a quiet Coral
-                Gables setting.
+              ProRange Painters is a full-service interior and exterior painting company that believes in treating our customers like family.
+
               </p>
-              <Link href="/agent/submit-property" className="btn btn-solid btn-flat">
-                {SubmitProperty}
-              </Link>
+
             </div>
           </Col>
         </Row>

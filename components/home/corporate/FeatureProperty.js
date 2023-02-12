@@ -18,42 +18,36 @@ import NoSsr from "../../../utils/NoSsr";
 const FeaturePropertySection = () => {
   const value = [
     {
-      title: "High Valley Fields",
+      title: "Calacatta Quartz Countertop",
       details: "Merrick Way, Miami, FL United Kingdom",
       moreDetails:
-        "No investment on earth is so safe, so sure, so certain to enrich its owner as undeveloped realty. we advise to place you your savings in realty near some growing city. There is no such savings bank anywhere. ",
-      bedroom: "3",
-      bathroom: "5",
+        "This luxurious white quartz with grey veins is a perfect replication of Calacatta marble. It's durable, easy to maintain and adds a touch of elegance to any kitchen. ",
+
       price: "48596.00",
-      sqft: "9532",
-      img: "/assets/images/feature/8.jpg",
+      img: "/assets/images/feature/quartz.jpg",
       id: "27",
     },
     {
-      title: "Honeycomb Farms",
+      title: "Statuario Quartz Countertop",
       details: "Merrick Way, Miami, FL United Kingdom",
       moreDetails:
-        "Real estate is an imperishable asset, ever increasing in value. It is the most solid security that human ingenuity has devised. It is the basis of all security and about the only indestructible security",
-      bedroom: "4",
-      bathroom: "2",
+        "Statuario quartz has a white base with soft grey veining and is often used to recreate the look of a classic white Italian marble.",
+
       price: "10596.00",
-      sqft: "22000",
-      img: "/assets/images/property/11.jpg",
+      img: "/assets/images/feature/quartzone.jpg",
       id: "28",
     },
     {
-      title: "Home in California Avenue ",
+      title: "Snowy Carrara Quartz Countertop",
       details: "Merrick Way, Miami, FL United Kingdom",
       moreDetails:
-        "Real estate cannot be lost or stolen, nor can it be carried away. Purchased with common sense, paid for in full, and managed with reasonable care, it is about the safest investment in the world.",
-      bedroom: "3",
-      bathroom: "1",
+        " This quartz countertop is a perfect replication of Carrara marble with its white base and soft grey veining. It's a popular choice for both kitchens and bathrooms.",
+
       price: "8000.00",
-      sqft: "1200",
-      img: "/assets/images/property/20.jpg",
+      img: "/assets/images/feature/quartzTwo.jpg",
       id: "29",
     },
-  ]
+  ];
   return (
     <section className="feature-section ratio_landscape pt-0 mt-5">
       <Container>
@@ -66,22 +60,41 @@ const FeaturePropertySection = () => {
               <h2>
                 Featured <span>Products</span>
               </h2>
-              <p className="font-roboto">Residences can be classified into different type of housing tenure can used for same physical type.</p>
+              <p className="font-roboto">
+                Residences can be classified into different type of housing
+                tenure can used for same physical type.
+              </p>
             </div>
             <Gallery>
               <NoSsr>
-                <Slider className="feature-3 classic-feature arrow-image zoom-gallery" {...feature3}>
+                <Slider
+                  className="feature-3 classic-feature arrow-image zoom-gallery"
+                  {...feature3}
+                >
                   {value &&
                     value.map((data, i) => (
-                      <div data-title="classic-image1" className="feature-style" key={i}>
+                      <div
+                        data-title="classic-image1"
+                        className="feature-style"
+                        key={i}
+                      >
                         <div className="feature-wrap">
                           <Row>
                             <Col xl="6" lg="5">
                               <div className="feature-image">
                                 <div className="zoom">
-                                  <Item original={data.img} width="1000" height="600" key={i}>
+                                  <Item
+                                    original={data.img}
+                                    width="1000"
+                                    height="600"
+                                    key={i}
+                                  >
                                     {({ ref, open }) => (
-                                      <div className="feature-overlay" ref={ref} onClick={open}>
+                                      <div
+                                        className="feature-overlay"
+                                        ref={ref}
+                                        onClick={open}
+                                      >
                                         <span>+</span>
                                       </div>
                                     )}
@@ -89,20 +102,24 @@ const FeaturePropertySection = () => {
                                   <Img src={data.img} className="bg-img" />
                                 </div>
 
-                                <span className="label label-solid label-lg label-flat">Featured</span>
+                                <span className="label label-solid label-lg label-flat">
+                                  Featured
+                                </span>
                               </div>
                             </Col>
                             <Col xl="6" lg="7">
                               <div className="feature-content">
                                 <div className="details">
                                   <h3>
-                                    <Link href="/property/image-box">{data.title}</Link>
+                                    <Link href="/property/image-box">
+                                      {data.title}
+                                    </Link>
                                   </h3>
                                   <span>{data.details}</span>
-                                  <p className="font-roboto">{data.moreDetails}</p>
+                                  <p className="font-roboto">
+                                    {data.moreDetails}
+                                  </p>
                                 </div>
-                       
-                          
                               </div>
                             </Col>
                           </Row>
